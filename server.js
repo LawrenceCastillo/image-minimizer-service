@@ -5,6 +5,7 @@ const path = require('path')
 const imagemin = require('imagemin')
 const imageminJpegtran = require('imagemin-jpegtran')
 const imageminPngquant = require('imagemin-pngquant')
+const imageminWebp = require('imagemin-webp')
 
 const app = express()
 app.use('/uploads', express.static(path.join(__dirname + '/uploads')))
@@ -58,8 +59,13 @@ app.post('/compress/uploads/:name/:ext', async (req, res) => {
     destination: 'output',
     plugins: [
       imageminJpegtran(),
-      imageminPngquant({
-        quality: [0.6, 0.8]
+      // imageminPngquant({
+      //   quality: [0.6, 0.8]
+      // })
+      imageminWebp({
+        quality: 100, 
+        method: 4, 
+        preset: 'picture'
       })
     ]
   })
