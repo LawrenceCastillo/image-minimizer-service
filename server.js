@@ -63,8 +63,8 @@ app.post('/compress/uploads/:name/:ext', async (req, res) => {
       //   quality: [0.6, 0.8]
       // })
       imageminWebp({
-        quality: 100, 
-        method: 4, 
+        quality: 70, 
+        method: 3, 
         preset: 'picture'
       })
     ]
