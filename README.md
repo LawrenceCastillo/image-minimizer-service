@@ -10,6 +10,6 @@ Imagemin for image minimization
 2. git clone [link]
 3. cd into folder
 4. npm install
-5. create /uploads directory at project root
+5. create /output and /uploads directories at project root
 6. node server.js
 7. use localhost:3000
